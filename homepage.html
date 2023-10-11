@@ -3,20 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/homepageDS.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <h1 id="name">Placeholder for name</h1>
-    </header>
-    <nav id="up">
-        <a href="#homepage.html">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="contact.html">Contact</a>
-        <a href="cart.html">Cart</a>
-    
+    <nav class="mask">
+        <a  id="navbuttons" href="#">Country Home Baking & Sweets</a>
+        <ul class="list">
+          <li><a id="navbuttons" href="#">About</a></li>
+          <li><a id="navbuttons" href="#">Projects</a></li>
+          <li><a id="navbuttons" href="#">News</a></li>
+          <li><a id="navbuttons" href="#">Contact</a></li>
+        </ul>
         
-    </nav>
+        </nav>
     
+    <div class="container" style="background-image: url(images/backcupcake.jpg); background-size: cover;
+    background-position: center;">
+        <div class="content">
+            <h1> Welcome To Country Home Baking & Sweets</h1>
+            <p id="frontpara">"Where Every Bite Tells a Story, Country Home Baking & Sweets - Crafting Sweet Memories, One Treat at a Time."</p>
+            <div class="stage">
+                <a  id="learnmore" href="#">Learn More</a>
+                </div>
+        </div>    
+     </div>
+
+     <div class="info">
+        
+        <video autoplay muted loop>
+            <source src="images/icingvideo.mp4" type="video/mp4" />
+          </video>
+         
+        <div class="image-container">
+            <img id="bakerpic" src="images/baker.jpg" alt="baker">
+          </div>
+          <div class="text">
+            <h2  class="animate-charcter" >Suzzane Hill</h2>
+            <p id="bakerinfo">Some information about the baker goes here.Some information about the baker goes here.Some information about the baker goes here. </p>
+          </div>
+        </div>
+<br>
+    <h5>Featured Items</h5>
+<br>
+        <div class="menuitems">
+            <div class="card">
+              <img src="images/cupcakes.jpg" alt="Chocolate Cupcake">
+              <div class="menuinfo">
+                <h4><b>Chocolate Cupcake</b></h4>
+               
+                    <a  id="addcart" href="#">Add to Cart</a>
+                   
+                
+              </div>
+            </div>
+            <div class="card">
+              <img src="images/caramel.jpg" alt="Caramel Cupcakes">
+              <div class="menuinfo">
+                <h4><b>Caramel Cupcakes</b></h4>
+               
+                    <a  id="addcart" href="#">Add to Cart</a>
+                    
+              </div>
+            </div>
+            <div class="card">
+              <img src="images/donuts.jpg" alt="Chocolate Donuts">
+              <div class="menuinfo">
+                <h4><b>Chocolate Donuts</b></h4>
+                
+                    <a  id="addcart" href="#">Add to Cart</a>
+                  
+              </div>
+            </div>
+          </div>
+          <footer>
+            <span>Team 3</span>
+          </footer>
+  
 </body>
 </html>
