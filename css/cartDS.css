@@ -3,6 +3,7 @@
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
 @import url('https://fonts.cdnfonts.com/css/bonheur-royale');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap');
+
 *{
     box-sizing: border-box;
   }
@@ -146,11 +147,14 @@ h1 {
 }
 
 /* Paragraph styles */
+
+
 p {
   max-width: 52ch;
   line-height: 1.5;
   padding: 1em;
 }
+
 
 
     /** baker info section **/
@@ -250,6 +254,8 @@ p {
       }
     }
     
+
+
   .menuitems {
     display: flex;
     justify-content: center; /* Distribute cards evenly with space in between */
@@ -349,6 +355,7 @@ p {
       margin: 0; /* Reset margins */
     }
   }
+
 
   /* questions */
   .question{
@@ -538,3 +545,5 @@ body .footer .contentfoot {
     row-gap: 3.5rem;
   }
 }
+
+
