@@ -7,151 +7,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Sachleen Kaur">
     <meta name="email" content="kaur0777@algonquinlive.com">
-    <!-- <script src="inspiration.js"></script> -->
+    <link rel="stylesheet" href="C:\Users\sachl\Desktop\AC'23\semester4\Software Dev project\Website\bootstrap-5.3.2-dist\css">
+
     <title>Menu Page</title>
 </head>
 
 <body>
-
-
-    <nav class="navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="nav-title" href="#">Country Home Baking & Sweets</a>
-        <ul class="nav-list">
-          <li><a class="nav-link" href="homepage.html">Home</a></li>
-          <li><a class="nav-link" href="menu.html">Menu</a></li>
-          <li><a class="nav-link" href="contact.html">Contact</a></li>
-          <li><a class="nav-link" href="cart.html">Cart</a></li>
-        </ul>
-      </nav>
-
-<div class="menuheader">
-
-  
-    <h1>Our Menu</h1>
-    <p>Fresh Bakery Items with the Finest Ingredients</p>
-
-    <h2>Halloween Specials</h2>
-
-</div>
-
-
-
-    <div class="row">
-        <div class="column">
-
-            <img src="images/cookies.png" alt="" class="card-img-top">
-
-            <p class="image-description">Description for Image 1</p>
-            <h3>Scary Cookies</h3>
-            <h6>$1.15<span id="Weight"> Per cookie</span></h6>
-
-            <a  id="ac" href="#">Add to cart</a>
-
-
-
+        <button class="navbar-toggler" type="button" data-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="homepage.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="menu.html">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cart.html">Cart</a>
+                </li>
+            </ul>
         </div>
-        <div class="column">
-
-            <img src="images/cake.png" alt="" class="card-img-top">
-
-            <p class="image-description">Description for Image 2</p>
-            <h3>Spider cake</h3>
-            <h6>$20.00<span id="Weight"> 2.5 Pounds</span></h6>
-
-            <a  id="ac" href="#">Add to cart</a>
-
-        
-
-
-        </div>
-        <div class="column">
-            <img src="images/cookies-2220291_1280.png" alt="" class="card-img-top">
-            <p class="image-description">Description for Image 3</p>
-            <h3>Skeleton Biscuits</h3>
-            <h6>$12.00<span id="Weight">Per dozen</span></h6>
-
-            <a  id="ac" href="#">Add to cart</a>
-
-
-        </div>
-    </div> <br> <br> <br>
-
-
-    
-
-    <h2>Other items</h2>
-    <div class="row">
-        <div class="column">
-            <img src="images/istockphoto-949144978-1024x1024.png" alt="" class="card-img-top">
-            <p class="image-description">Description for Image 4 </p>
-            <h3>Canadian Sugar Pie</h3>
-            <h6>$20.00<span id="Weight">10"</span></h6>
-
-            <a  id="ac" href="#">Add to cart</a>
-
- 
-        </div>
-        <div class="column">
-            <img src="images/gingerbread-1560711_1280.png" alt="" class="card-img-top">
-            <p class="image-description">Description for Image 5 </p>
-            <h3>Gingerbread muffins</h3>
-            <h6>$6.00<span id="Weight">4 jumbo/box</span></h6>
-
-            <a  id="ac" href="#">Add to cart</a>
-
-  
-        </div>
-    
-        <div class="column">
-            <img src="images/cinnamon-rolls-1417494_1280.png" alt="" class="card-img-top">
-            <p class="image-description">Description for Image 6</p>
-            <h3>Apple-Cinnamon bread</h3>
-            <h6>$6.00<span id="Weight">9"x5" loaf</span></h6>
-
-            <a  id="ac" href="#">Add to cart</a>
-
- 
-        </div>
-
+    </nav>
+    <div class="container menuheader">
+        <h1>Our Menu</h1>
+        <p>Fresh Bakery Items with the Finest Ingredients</p>
+        <h2>Halloween Specials</h2>
     </div>
-
-    <div class="row">
-        <div class="column">
-            <img src="images/donuts.jpg" alt="" class="container-fluid">
-                <p class="image-description">Description for Image 7 </p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="images/cookies.png" alt="" class="img-fluid">
+                <p class="image-description">Description for Image 1</p>
+                <h3>Scary Cookies</h3>
+                <h6>$1.15 <span id="Weight">Per cookie</span></h6>
+                <a id ="ac" class="btn btn-primary" href="#">Add to cart</a>
+            </div>
+            <div class="col-md-4">
+                <img src="images/cake.png" alt="" class="img-fluid">
+                <p class="image-description">Description for Image 2</p>
+                <h3>Spider cake</h3>
+                <h6>$20.00 <span id="Weight">2.5 Pounds</span></h6>
+                <a id ="ac" class="btn btn-primary" href="#">Add to cart</a>
+            </div>
+            <div class="col-md-4">
+                <img src="images/cookies-2220291_1280.png" alt="" class="img-fluid">
+                <p class="image-description">Description for Image 3</p>
+                <h3>Skeleton Biscuits</h3>
+                <h6>$12.00 <span id="Weight">Per dozen</span></h6>
+                <a id ="ac" class="btn btn-primary" href="#">Add to cart</a>
+            </div>
+        </div>
+    </div>
+    <br> <br> <br>
+    <div class="container">
+        <h2>Other items</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="images/istockphoto-949144978-1024x1024.png" alt="" class="img-fluid">
+                <p class="image-description">Description for Image 4</p>
+                <h3>Canadian Sugar Pie</h3>
+                <h6>$20.00 <span id="Weight">10"</span></h6>
+                <a id ="ac" class="btn btn-primary" href="#">Add to cart</a>
+            </div>
+            <div class="col-md-4">
+                <img src="images/gingerbread-1560711_1280.png" alt="" class="img-fluid">
+                <p class="image-description">Description for Image 5</p>
+                <h3>Gingerbread muffins</h3>
+                <h6>$6.00 <span id="Weight">4 jumbo/box</span></h6>
+                <a id ="ac" class="btn btn-primary" href="#">Add to cart</a>
+            </div>
+            <div class="col-md-4">
+                <img src="images/cinnamon-rolls-1417494_1280.png" alt="" class="img-fluid">
+                <p class="image-description">Description for Image 6</p>
+                <h3>Apple-Cinnamon bread</h3>
+                <h6>$6.00 <span id="Weight">9"x5" loaf</span></h6>
+                <a id ="ac" class="btn btn-primary" href="#">Add to cart</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="images/donuts.jpg" alt="" class="img-fluid">
+                <p class="image-description">Description for Image 7</p>
                 <h3>Chocolate Donuts</h3>
-                <h6>$8.00<span id="Weight">5/box</span></h6>
-
-                <a  id="ac" href="#">Add to cart</a>
-
-
-        </div>
-
-        <div class="column">
-            <img src="images/sugarFreecake.png" alt="" class="container-fluid">
-                <p class="image-description">Description for Image 8 </p>
+                <h6>$8.00 <span id="Weight">5/box</span></h6>
+                <a id ="ac" class="btn btn-primary" href="#">Add to cart</a>
+            </div>
+            <div class="col-md-4">
+                <img src="images/sugarFreecake.png" alt="" class="img-fluid">
+                <p class="image-description">Description for Image 8</p>
                 <h3>Sugar Free Cake</h3>
-                <h6>$22.00<span id="Weight">2.5 pounds</span></h6>
-
-                <a  id="ac" href="#">Add to cart</a>
-
-
-        </div>
-
-        <div class="column">
-            <img src="images/2layerCake.png" alt="" class="container-fluid">
-                <p class="image-description">Description for Image 9 </p>
+                <h6>$22.00 <span id="Weight">2.5 pounds</span></h6>
+                <a id ="ac" class="btn btn-primary" href="#">Add to cart</a>
+            </div>
+            <div class="col-md-4">
+                <img src="images/2layerCake.png" alt="" class="img-fluid">
+                <p class="image-description">Description for Image 9</p>
                 <h3>Anniversary Cake</h3>
-                <h6>$27.50<span id="Weight">3 pounds</span></h6>
-
-                <a  id="ac" href="#">Add to cart</a>
-
-
+                <h6>$27.50 <span id="Weight">3 pounds</span></h6>
+                <a id ="ac" class="btn btn-primary" href="#">Add to cart</a>
+            </div>
         </div>
     </div>
-
-
-
-</body>
-
-</html>
+    <!-- Add Bootstrap JS and jQuery scripts here -->
+    <script src="C:\Users\sachl\Desktop\AC'23\semester4\Software Dev project\Website\bootstrap-5.3.2-dist\js"></script>
+   
