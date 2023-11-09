@@ -13,7 +13,7 @@ body {
 }
 
 /* Navbar styles */
-nav {
+.navbar {
   background-color: rgba(136, 123, 115, 0); /* Use rgba to set the background color with transparency */
   display: flex;
   justify-content: space-between;
@@ -34,7 +34,7 @@ nav {
   font-family: 'Arial', sans-serif;
 }
 
-.navbar-nav {
+.nav-list {
   list-style-type: none;
   display: flex;
   margin: 0;
@@ -49,11 +49,9 @@ nav {
     font-size: 2.5rem;
     font-family: 'Arial', sans-serif;
 }
-a:hover{
-  color: #573518;
-}
+
 /* Responsive adjustments for smaller screens */
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
@@ -74,7 +72,24 @@ a:hover{
 
 
 }
-
+/* .card-group {
+    padding-left: 10px;
+    
+}
+.card{
+    font-size: small;
+    padding: 20px;
+    color: rgb(132, 130, 130);
+    font-weight: bold;
+    background-color: white;
+    
+} */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  
   /* Clear floats after image containers */
   .row::after {
     content: "";
@@ -83,7 +98,7 @@ a:hover{
   }
   
 
-.container-menuheader{
+.menuheader{
     margin-top: 60px;
 
 }
@@ -106,8 +121,7 @@ body {
 
 img {
 
-    height: 300px;
-    padding-top: 20px;
+    height: 450px;
 
  
 }
@@ -137,12 +151,13 @@ p {
 
 
 h3 {
-    
-    font-size: 1.8rem;
+    padding: 10px 20px;
+
+    font-size: 3rem;
     color: #c37a3e;
     text-align: left;
     font-weight: bold;
-    margin-left: 150px;
+    margin-left: 360px;
 
 
 }
@@ -150,15 +165,14 @@ h3 {
  h6 {
     padding: 10px 0px 5px 20px;
 
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-weight: bold;
     float: left;
-    margin-left: 150px;
-    margin-bottom: 40px;
+    margin-left: 360px;
 }
 
 #Weight {
-    font-size: 1.1rem;
+    font-size: 30px;
 
   
     color: rgba(0, 0, 0, 0.6);
@@ -184,24 +198,9 @@ h3 {
 
 }
 
-#ac:hover {
-    background-color: #573518;
+a:hover {
+    background-color: #7c4a21;
 }
-
-/* Custom CSS to ensure three items in one row for larger screens */
-@media (min-width: 768px) {
-  .container .row {
-      display: flex;
-      flex-wrap: wrap;
-      padding: 10px;
-  }
-
-  .container .col-md-4 {
-      flex: 0 0 33.33%;
-      max-width: 33.33%;
-  }
-}
-
 
 footer {
     font-family: Raleway;
