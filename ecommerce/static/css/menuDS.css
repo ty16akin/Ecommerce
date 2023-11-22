@@ -51,3 +51,10 @@ padding: 0;
 a:hover{
 color: #573518;
 }
+.cart-row{
+  display: flex;
+  align-items: flex-strech;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+}

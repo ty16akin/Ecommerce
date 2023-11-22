@@ -10,7 +10,7 @@ class Customer(models.Model):
     email = models.CharField(max_length=200, null=True)
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
 class Product(models.Model):
     name = models.CharField(max_length=200)
@@ -31,11 +31,11 @@ class Product(models.Model):
 class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
     date_ordered = models.DateTimeField(auto_now_add=True)
-    complete = models.BooleanField(default=False)
+    complete = models.BooleanField(default=False, null=True, blank=False)
     transaction_id = models.CharField(max_length=100, null=True)
 
-    def __str__(self) -> str:
-        return str(self.id)
+    def __str__(self):
+        return str(self.id) or ' '
     
 class OrderItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
@@ -52,7 +52,7 @@ class ShippingAddress(models.Model):
     postalcode = models.CharField(max_length=200, null=False)
     date_added = models.DateTimeField(auto_now_add=True) 
 
-    def __str__(self) -> str:
+    def __str__(self):
         return self.address
     
     

@@ -2,7 +2,7 @@
 {% load static %}
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="{% static "css/menuDS.css" %}">
+  <link rel="stylesheet" href="{% static "css/cartDS.css" %}">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Sachleen Kaur">
@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="nav-title" href="#">Country Home Baking & Sweets</a>
       <button class="navbar-toggler" type="button" data-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -34,32 +34,28 @@
           </ul>
       </div>
   </nav>
-        <div class="container" style="url('{% static "images/backcupcake.jpg" %}'); background-size: cover; background-position: center;">
+        <div class="container">
             <div class="box-element">
                 <h1>Cart</h1>
-                <div class="cart-row">
-                  <div style="flex:2"><img class="row-image" src="{{items.imageURL}}"></div>
-                  <div style="flex:2">{{items.name}}</div>
-                  <div style="flex:1">$20</div>
+                {% for item in items %}
+                <div class="container col-lg-12">
+                  <div style="flex:2"><img class="row-image" src="{{item.product.imageURL}}"></div>
+                  <div style="flex:2">{{item.product.name}}</div>
+                  <div style="flex:1">{{item.product.price|floatformat:2}}</div>
                   <div style="flex:1">
-                    <p class="quantity">2</p>
+                    <p class="quantity">{{item.quantity}}</p>
                     <div class="quantity"> 
                       <img class="chg-quantity" src="{% static "images/arrowup.png" %}">
                       <img class="chg-quantity" src="{% static "images/arrowdown.png" %}">
                     </div>
                   </div>
-                  <div style="flex:1"><img class="row-image" src=""></div>
-                </div>
-
-                <p id="frontpara">
-                    Nothing here. :(
-
+                  {% endfor %}
                 <br><br><br><br><br><br><br><br><br>
                 <b>Tax: </b><br>
                 <b>Total: </b><br><br>
                 <label for="myText">Special Instructions:</label><br>
                 <input type="text" width="50px" height="20px" id="myText" name="myText" placeholder="Allergies, dietary restrictions, notes.">
-                <br><button class>Submit</button>    
+                <br><br><a class="btn btn-outline-warning" href="{% url 'chbs:checkout' %}">Checkout</a>    
             </p>
                 
 
