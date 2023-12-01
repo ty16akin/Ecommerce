@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from decimal import *
 # Create your models here.
 
 #Code sourced from : https://www.youtube.com/watch?v=obZMr9URmVI&list=PL-51WBLyFTg0omnamUjL1TCVov7yDTRng&index=2
@@ -14,8 +15,9 @@ class Customer(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=200)
-    price = models.FloatField()
+    price = models.DecimalField(max_digits=7, decimal_places=2)
     special = models.BooleanField(default=False, null=True, blank=True)
+    digital = models.BooleanField(default=False, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     def __str__(self) -> str:
         return self.name
@@ -35,7 +37,41 @@ class Order(models.Model):
     transaction_id = models.CharField(max_length=100, null=True)
 
     def __str__(self):
-        return str(self.id) or ' '
+        return str(self.id)
+    
+    @property
+    def shipping(self):
+        shipping = False
+        orderitems = self.orderitem_set.all()
+        for i in orderitems:
+            if i.product.digital == False:
+                shipping = True
+        return shipping
+    
+    @property
+    def get_cart_subtotal(self):
+        orderitems = self.orderitem_set.all()
+        total = sum([item.get_total for item in orderitems]) 
+        return round(total, 2)
+    
+    @property
+    def get_cart_total(self):
+        orderitems = self.orderitem_set.all()
+        tax = sum([item.get_total for item in orderitems])* Decimal(0.13)
+        total = sum([item.get_total for item in orderitems]) + tax
+        return round(total, 2)
+    
+    @property
+    def get_cart_tax(self):
+        orderitems = self.orderitem_set.all()
+        tax = sum([item.get_total for item in orderitems])*Decimal(0.13)
+        return round(tax, 2)
+    
+    @property
+    def get_cart_items(self):
+        orderitems = self.orderitem_set.all()
+        total = sum([item.quantity for item in orderitems])
+        return total
     
 class OrderItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
@@ -44,11 +80,17 @@ class OrderItem(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
 
 
+    @property
+    def get_total(self):
+        total = self.product.price * self.quantity
+        return round(total, 2)
+
 class ShippingAddress(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True)
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)
     address = models.CharField(max_length=200, null=False)
     city = models.CharField(max_length=200, null=False)
+    province = models.CharField(max_length=200, null=False)
     postalcode = models.CharField(max_length=200, null=False)
     date_added = models.DateTimeField(auto_now_add=True) 
 
