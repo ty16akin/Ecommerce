@@ -19,7 +19,7 @@ display: flex;
 justify-content: space-between;
 align-items: end;
 padding: 10px 20px;
-position: fixed;
+/* position: sticky; */
 top: 0;
 width: 100%;
 z-index: 1000;
@@ -80,9 +80,8 @@ color: #573518;
     
   font-size: 1.8rem;
   color: #c37a3e;
-  text-align: left;
+  text-align: center;
   font-weight: bold;
-  margin-left: 150px;
 }
 
 /* Source https://www.w3schools.com/howto/howto_js_snackbar.asp*/
@@ -130,4 +129,9 @@ color: #573518;
 @keyframes fadeout {
   from {bottom: 30px; opacity: 1;}
   to {bottom: 0; opacity: 0;}
+}
+
+.card-img{
+  width: 334px;
+  height: 445.33px;
 }

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'CHBS',
     'clearcache',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
@@ -140,10 +141,10 @@ MEDIA_ROOT = STATIC_ROOT / "images"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#SMTP Configuration
+#SMTP/EMAIL Configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'ty16akins@gmail.com'
-EMAIL_HOST_PASSWORD = 'nazv stgk xfwt efgw'
+EMAIL_HOST_USER = 'xxxx@gmail.com'
+EMAIL_HOST_PASSWORD = 'srez zzku npis wlac'

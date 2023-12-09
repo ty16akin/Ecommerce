@@ -1,18 +1,24 @@
+# Author: Taiwo Akinlabi
+#Code sourced from : https://www.youtube.com/watch?v=obZMr9URmVI&list=PL-51WBLyFTg0omnamUjL1TCVov7yDTRng&index=2
 from django.db import models
 from django.contrib.auth.models import User
 from decimal import *
+from phonenumber_field.modelfields import PhoneNumberField
 # Create your models here.
 
-#Code sourced from : https://www.youtube.com/watch?v=obZMr9URmVI&list=PL-51WBLyFTg0omnamUjL1TCVov7yDTRng&index=2
 
+
+# Customer model contains customer field names and property 
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE ,null=True, blank=True)
     name = models.CharField(max_length=200, null=True)
     email = models.CharField(max_length=200, null=True)
+    phone = PhoneNumberField(default=False, null=True)
 
     def __str__(self):
         return str(self.name)
 
+# Product model contains product field names and property 
 class Product(models.Model):
     name = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=7, decimal_places=2)
@@ -30,6 +36,7 @@ class Product(models.Model):
             url = ''
         return url
 
+# Order model contains order field names and property 
 class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
     date_ordered = models.DateTimeField(auto_now_add=True)
@@ -72,7 +79,8 @@ class Order(models.Model):
         orderitems = self.orderitem_set.all()
         total = sum([item.quantity for item in orderitems])
         return total
-    
+
+ # OrderItems model contains orderItems field names and property    
 class OrderItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)
@@ -85,6 +93,7 @@ class OrderItem(models.Model):
         total = self.product.price * self.quantity
         return round(total, 2)
 
+# Shipping model contains shipping field names and property   
 class ShippingAddress(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True)
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)

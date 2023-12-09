@@ -1,6 +1,6 @@
 body {
     /* Location of the image */
-    background-image: url(images/backcupcake.jpg);
+    background-image: url("images/backcupcake.jpg");
     
     /* Background image is centered vertically and horizontally at all times */
     background-position: center center;
@@ -25,7 +25,6 @@ body {
         width: 15px;
         cursor: pointer;
         display: block;
-    
         transition:.1s;
     }
     

@@ -11,6 +11,7 @@
     <meta name="author" content="Sachleen Kaur">
     <meta name="email" content="kaur0777@algonquinlive.com">
     <script type="text/javascript">
+        {% comment %} Code sourced from : https://www.youtube.com/watch?v=obZMr9URmVI&list=PL-51WBLyFTg0omnamUjL1TCVov7yDTRng&index=2 {% endcomment %}
         var user = '{{request.user}}'
 
         function getToken(name) {
@@ -109,6 +110,10 @@ background-position: center;">
                             <input type="text" id="fname" name="fullname" placeholder="Meghan M. Doe" required>
                             <label for="email"><i class="fa fa-envelope"></i> Email</label>
                             <input type="text" id="email" name="email" placeholder="meghan@example.com" required>
+                            <label for="phone"><i class="fa fa-phone"></i> Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="000 000 0000" required>
+                            <label for="myText"> <i class="fa fa-envelope"></i> Special Instructions:</label>
+                            <input type="text" id="myText" name="myText" placeholder="Allergies, dietary restrictions, notes.">
                         </div>
                             <div id="shipping-info">
                             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
@@ -140,6 +145,7 @@ background-position: center;">
     </div>
 
     <script type="text/javascript">
+        {% comment %} Code sourced from : https://www.youtube.com/watch?v=obZMr9URmVI&list=PL-51WBLyFTg0omnamUjL1TCVov7yDTRng&index=2 {% endcomment %}
         var shipping = '{{order.shipping}}'
         var total = "{{order.get_cart_total}}"
         var cartItems = "{{order.get_cart_items}}"
@@ -158,7 +164,7 @@ background-position: center;">
             document.getElementById('payment-info').classList.remove("hidden");
         }
 
-        if(cartItems == 0 && user != 'AnonymousUser'){
+        if(cartItems == 0 && (user != 'AnonymousUser' || user == 'AnonymousUser')){
             document.getElementById('form-wrapper').classList.add("hidden");
             document.getElementById('form-button').classList.add("hidden");
             document.getElementById('payment-info').classList.add("hidden");
@@ -173,18 +179,23 @@ background-position: center;">
         })
 
         document.getElementById('make-payment').addEventListener('click', function(e){
+            e.preventDefault()
             submitFormData()
         })
 
+        // send the form data to the backemd to process the order
         function submitFormData(){
             console.log('Payment button clicked')
 
+            // stores user data
             var userFormData = {
                 'name': null,
                 'email': null,
+                'phone': null,
                 'total':total
             }
 
+            // stores users shipping data
             var shippingInfo = {
                 'address': null,
                 'city': null,
@@ -199,8 +210,10 @@ background-position: center;">
                 shippingInfo.postal = form.postal.value
             }
 
+            
             if(user == 'AnonymousUser'){
                 userFormData.name = form.fullname.value
+                userFormData.phone = form.phone.value
                 userFormData.email = form.email.value
             }
 
@@ -220,7 +233,6 @@ background-position: center;">
 
                 cart = {}
                 document.cookie = 'cart=' + JSON.stringify(cart) + ";domain=;path=/"
-
                 window.location.href = "{% url 'chbs:homepage' %}"
             })
         }

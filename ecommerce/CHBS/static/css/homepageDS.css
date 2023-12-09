@@ -216,7 +216,7 @@ p {
     }
     
     #bakerinfo {
-      font-size: 2rem; /* Adjust font size for better responsiveness */
+      font-size: 1rem; /* Adjust font size for better responsiveness */
       font-family: 'Roboto Slab';
       color: #dd8d33;
     }
@@ -295,7 +295,7 @@ p {
       text-align: center; /* Center the text */
       margin: 0; /* Remove margin around text */
       font-family: 'Bonheur Royale';
-      font-size: 2rem; /* Adjust font size for better responsiveness */
+      font-size: 1.5rem; /* Adjust font size for better responsiveness */
     }
     
     @media (max-width: 640px) {

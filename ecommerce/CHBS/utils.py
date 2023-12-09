@@ -1,3 +1,4 @@
+# Author: Taiwo Akinlabi
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import JsonResponse
@@ -6,6 +7,9 @@ import datetime
 from .models import *
 import json
 
+#Code sourced from : https://www.youtube.com/watch?v=obZMr9URmVI&list=PL-51WBLyFTg0omnamUjL1TCVov7yDTRng&index=2
+
+# gets cookieCart data as json, loops throught the cart items & returns it as a dictionary
 def cookieCart(request):
 
     try:
@@ -24,8 +28,8 @@ def cookieCart(request):
             
             product = Product.objects.get(id=i)
             subtotal = (product.price * cart[i]['quantity'])
-            tax = subtotal * Decimal(0.13)
-            total = subtotal + tax
+            tax = round(subtotal * Decimal(0.13),2)
+            total = round(subtotal + tax, 2)
             
             order['get_cart_subtotal'] += subtotal
             order['get_cart_tax'] += tax
@@ -50,6 +54,7 @@ def cookieCart(request):
             pass  
     return {'items':items, 'order':order, 'cartItems':cartItems}
 
+# get the cart data for both authenticated and unauthenticated users and returns its as a dictionary
 def cartData(request):
     if request.user.is_authenticated:
         customer = request.user.customer
@@ -63,22 +68,29 @@ def cartData(request):
        items = cookieData['items']
     return {'items':items, 'order':order, 'cartItems':cartItems}
 
+# processes the guest's order and returns the customer's info, order & order items 
 def guestOrder(request, data):
-
     print("user is not logged in")
     print('COOKIES', request.COOKIES)
+    # grabs all user data from the form 
     name = data['form']['name']
+    phone = data['form']['phone']
     email = data['form']['email']
 
     cookieData = cookieCart(request)
     items = cookieData['items']
 
+    #querys or creates a user 
     customer, created = Customer.objects.get_or_create(
+        phone=phone,
         email=email,
     )
+    
     customer.name = name
+    # saves a user to the database
     customer.save()
 
+    #querys or creates the user order
     order = Order.objects.create(
         customer=customer,
         complete=False,
@@ -93,4 +105,4 @@ def guestOrder(request, data):
             quantity=item['quantity']
         )
     
-    return customer, order
+    return customer, order, items

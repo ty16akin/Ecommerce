@@ -70,7 +70,7 @@
         <li><a class="nav-link" href="{% url 'chbs:homepage' %}">Home</a></li>
         <li><a class="nav-link" href="{% url 'chbs:menu' %}">Menu</a></li>
         <li><a class="nav-link" href="{% url 'chbs:contact' %}">Contact</a></li>
-        <li><a class="nav-link" href="{% url 'chbs:cart' %}">Cart</a></li>
+        <li><a class="nav-link" href="{% url 'chbs:cart' %}">cart</a></li>
       </ul>
     </nav>
     <div style="background-image: url('{% static "images/backcupcake.jpg" %}'); background-size: cover; background-position: center; width: 100%;">
@@ -91,17 +91,17 @@
           </video>
          
         <div class="image-container">
-            <img id="bakerpic" src="{% static "images/baker.jpg" %}" alt="baker.jpg">
+            <img id="bakerpic" src="{% static "images/SueBaking - 2.png" %}" alt="baker.jpg">
           </div>
           <div class="text">
             <h2  class="animate-charcter" >Suzanne Hill</h2>
-            <p id="bakerinfo">Some information about the baker goes here.Some information about the baker goes here.Some information about the baker goes here. </p>
+            <p id="bakerinfo">I’m Suzanne Hill, I’m a baker based in the Metcalfe area. When I was a little girl, I’d made mud pies and snow cakes. Now that I am all growed up, I can supply almost any kind of baked goods.  </p>
           </div>
         </div>
 <br>
     <h5>Featured Items</h5>
 <br>
-        <div class="menuitems">
+        <div class="menuitems ">
           {% for product in products %}
           {% if product.special == True %}
           <div class="card">
