@@ -19,10 +19,10 @@ for (i=0; i < updateBtns.length; i++) {
 }
 
   // add or remove an item from the cookie/guest user's Cart for unauthenticated user
-function addCookieItem(productId, action){
+function updateCookieItem(productId, action){
     console.log('User is not authenticated')
 
-    if (action == 'add'){
+    if (action == 'add' || KeyboardEvent(action())){
         if (cart[productId] == undefined) {
             cart[productId] = {'quantity':1}
         }else{
