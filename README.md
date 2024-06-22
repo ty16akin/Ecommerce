@@ -21,7 +21,7 @@ purchase her products. The web app contains functionalities that gives customer 
 
 **client:** Bootstarp, Css, Html, Javascript, Python
 
-**Server:** Django, 
+**Server:** Django 
 
 # Installation
 
