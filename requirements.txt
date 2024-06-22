@@ -1,7 +1,9 @@
-# Author: Taiwo Akinlabi
-asgiref==3.7.2
+asgiref==3.8.1
 Django==4.2.6
 django-clearcache==1.2.1
-mysqlclient==2.2.0
-Pillow==10.1.0
-sqlparse==0.4.4
+django-phonenumber-field==7.3.0
+mysqlclient==2.2.4
+phonenumbers==8.13.39
+pillow==10.3.0
+PyMySQL==1.1.1
+sqlparse==0.5.0
