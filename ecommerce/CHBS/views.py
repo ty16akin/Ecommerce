@@ -36,7 +36,10 @@ def cart(request):
 # view function for the menu page returns the page request, urls and context dictonary
 def menu(request):
     products  = Product.objects.all()
-    context = {'products':products}
+    data = cartData(request)
+    order = data['order']
+
+    context = {'products':products, 'order':order}
     return render(request, 'CHBS/menu.html', context)
 
 # view function for the contact page returns the page request, urls and context dictonary

@@ -12,6 +12,17 @@ padding: 0;
 box-sizing: border-box;
 }
 
+.cart-count {
+  position: absolute;
+  margin-left: 2pt ;
+  background-color: rgb(170, 99, 12);
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
 /* Navbar styles */
 nav {
 background-color: rgba(136, 123, 115, 0); /* Use rgba to set the background color with transparency */

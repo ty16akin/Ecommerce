@@ -66,7 +66,7 @@
           <li><a class="nav-link" href="{% url 'chbs:homepage' %}">Home</a></li>
           <li><a class="nav-link" href="{% url 'chbs:menu' %}">Menu</a></li>
           <li><a class="nav-link" href="{% url 'chbs:contact' %}">Contact</a></li>
-          <li><a class="nav-link" href="{% url 'chbs:cart' %}">Cart</a></li>
+          <li><a class="nav-link" href="{% url 'chbs:cart' %}">Cart<span class='cart-count'>{{order.get_cart_items}}</span></a></li>
         </ul>
       </nav>
     

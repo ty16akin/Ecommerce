@@ -3,23 +3,26 @@
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
 @import url('https://fonts.cdnfonts.com/css/bonheur-royale');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap');
-*{
-    box-sizing: border-box;
-  }
-  html {
-    font-size: 1.2rem; 
-}
-  body {
-    margin: 0;
-    min-height: 200vh;
-    font-size: 0;
+
+body {
     font-family: Helvetica, Verdana, sans-serif;
   }
  /* Reset default margin and padding */
 * {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cart-count {
+  position: absolute;
+  margin-left: 2pt ;
+  background-color: rgb(170, 99, 12);
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 /* Navbar styles */
@@ -295,7 +298,7 @@ p {
       text-align: center; /* Center the text */
       margin: 0; /* Remove margin around text */
       font-family: 'Bonheur Royale';
-      font-size: 2rem; /* Adjust font size for better responsiveness */
+      font-size: 1.5rem; /* Adjust font size for better responsiveness */
     }
     
     @media (max-width: 640px) {
@@ -314,8 +317,6 @@ p {
     }
 /* foooter*/
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -325,7 +326,6 @@ body .footer {
   --footer-background:#c59a6c;
   display: grid;
   position: relative;
-  width: 100%;
   grid-area: footer;
   min-height: 12rem;
   margin-top: 130px;
@@ -354,7 +354,6 @@ body .footer .contentfoot {
   z-index: 2;
 }
 .footer .content .containerfoot {
-  max-width: 768px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -490,3 +489,15 @@ body .footer .contentfoot {
     row-gap: 3.5rem;
   }
 }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+p, h1, h2, h3, h4, h5, h6, div {
+  margin: 0;
+  padding: 0;
+}
+

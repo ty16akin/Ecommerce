@@ -2,6 +2,11 @@
 // Code sourced from : https://www.youtube.com/watch?v=obZMr9URmVI&list=PL-51WBLyFTg0omnamUjL1TCVov7yDTRng&index=2
 var updateBtns = document.getElementsByClassName('update-cart')
 
+var cartItems = "{{order.get_cart_items}}"
+
+if (cartItems == 0 && (user != 'AnonymousUser' || user == 'AnonymousUser'))
+      document.getElementById('countinfo').classList.add('hidden');
+
 // loops through add to cart buttons
 for (i=0; i < updateBtns.length; i++) {
     updateBtns[i].addEventListener('click', function(){
