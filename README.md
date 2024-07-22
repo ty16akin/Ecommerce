@@ -55,7 +55,7 @@ If you would like to contribute to the project, follow these steps:
 4. Push to the branch: `git push origin feature-name`
 5. Open a pull request.
 
-# Authors
+# Author
 
 - TAIWO AKINLABI
 
