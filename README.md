@@ -57,9 +57,8 @@ If you would like to contribute to the project, follow these steps:
 
 # Authors
 
-- ALEXANDRA MASONGUERTIN 
 - TAIWO AKINLABI
-- PRAHBNOOR SINGH
-- SACHLEEN KAUR
+
+
 
   
